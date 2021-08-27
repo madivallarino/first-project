@@ -60,19 +60,19 @@ function normalizeData(data, userInput){
 
             renderCard(artistCard)
 }
-// function updateArtistPage (){
-//   fetch(baseUrl)
-//   .then(resp=>resp.json())
-//   .then(data=>  data.forEach(data2 =>renderPage(data2)))
-// }
-/// need to delete
-// function renderPage(artistCard){
-//   console.log(artistCard)  
-//   createBanner(artistCard)
-//     renderCard(artistCard)
-// }
+function updateArtistPage (){
+  fetch(baseUrl)
+  .then(resp=>resp.json())
+  .then(data=>  data.forEach(data2 =>renderCard(data2)))
+}
+
 function renderCard(artistCard){
-  
+//makes the banner
+const artistBannerImg = document.createElement('img')
+    artistBannerImg.src = artistCard.banner
+    artistBannerImg.className = 'header'
+    document.querySelector('h2#header').append(artistBannerImg)
+  //makes the card
   const artistDiv = document.createElement('div')
   artistDiv.className = "artist-div"
   document.querySelector("body").append(artistDiv)
@@ -84,7 +84,7 @@ function renderCard(artistCard){
 
   //created and added dynamic colors to all span tags
 const userSpan = document.createElement('span')
-userSpan.textContent = artistCard.username
+userSpan.textContent = artistCard.username + `'s favorite artist:`
 userSpan.addEventListener('mouseover', (e)=>{
   userSpan.style.color = 'crimson'
 })
@@ -109,8 +109,7 @@ userSpan.addEventListener('mouseover', (e)=>{
   moodSpan.addEventListener('mouseover', (e)=>{
       moodSpan.style.color = 'crimson'
   })
-
-
+  
 
 //adding webstie link & image
   const websiteLink = document.createElement('a')
@@ -131,6 +130,7 @@ userSpan.addEventListener('mouseover', (e)=>{
       artistReviewForm.append(newSpanForText)
     artistReviewForm.reset()
   });
+
   const contentInput = document.createElement("input");
   contentInput.type = "text";
   contentInput.id = "content-input";
@@ -139,33 +139,28 @@ userSpan.addEventListener('mouseover', (e)=>{
   submit.id = "submit";
   submit.value = "Create Comment";
 
+
  const deleteButton = document.createElement('button')
  deleteButton.innerText = 'X'
- deleteButton.addEventListener('click', () => deleteCard(artistDiv, artistCard))
+ deleteButton.addEventListener('click', () => deleteCard(artistDiv, artistBannerImg, artistCard))
 
 
   //appending 
   artistReviewForm.append(contentInput, submit)
   artistsCardDiv.append(userSpan, nameSpan, artistImage, genreSpan, styleSpan, moodSpan, websiteLink,artistReviewForm, deleteButton)
-  createBanner(artistCard)
-}
-function createBanner(artistCard){
-    const artistBannerImg = document.createElement('img')
-    artistBannerImg.src = artistCard.banner
-    artistBannerImg.className = 'header'
-    document.querySelector('h1#header').append(artistBannerImg)
+ 
 }
 
-
-function deleteCard(artistDiv, artistCard){
+function deleteCard(artistDiv, artistBannerImg, artistCard){
   fetch(`${baseUrl}/${artistCard.id}`, {
     method: 'DELETE',
   })
 .then(resp => resp.json())
 .then(artistDiv.remove())
+.then(artistBannerImg.remove())
 }
 
-// updateArtistPage()
+updateArtistPage()
 
 
 
