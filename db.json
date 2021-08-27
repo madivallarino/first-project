@@ -10,6 +10,17 @@
       "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
       "username": "maddy",
       "id": 1
+    },
+    {
+      "name": "Miley Cyrus",
+      "genre": "Country",
+      "style": "Rock/Pop",
+      "mood": "Confrontational",
+      "website": "www.mileycyrus.com",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/vussus1454419295.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
+      "username": "maddy",
+      "id": 2
     }
   ],
   "comments": [

@@ -72,6 +72,7 @@ function renderPage(artistCard){
     renderCard(artistCard)
 }
 function renderCard(artistCard){
+  
   const artistDiv = document.createElement('div')
   artistDiv.className = "artist-div"
   document.querySelector("body").append(artistDiv)
@@ -79,13 +80,28 @@ function renderCard(artistCard){
   artistsCardDiv.id = "artist-card"
   artistsCardDiv.className = "card"
   artistDiv.appendChild(artistsCardDiv)
+
+
+  //created and added dynamic colors to all span tags
+const userSpan = document.createElement('span')
+userSpan.textContent = artistCard.username
+userSpan.addEventListener('mouseover', (e)=>{
+  userSpan.style.color = 'turquoise'
+})
+
   const nameSpan = document.createElement('span')
   nameSpan.textContent = artistCard.name
+  nameSpan.addEventListener('mouseover', (e)=>{
+    nameSpan.style.color = 'green'
+})
   const genreSpan = document.createElement('span')
   genreSpan.textContent =`Genre: ${artistCard.genre}`
+  genreSpan.addEventListener('mouseover', (e)=>{
+    genreSpan.style.color = 'pink'
+})
   const styleSpan = document.createElement('span')
   styleSpan.textContent = `Style: ${artistCard.style}`
-  styleSpan.addEventListener('click', (e)=>{
+  styleSpan.addEventListener('mouseover', (e)=>{
       styleSpan.style.color = 'magenta'
   })
   const moodSpan = document.createElement('span')
@@ -93,6 +109,10 @@ function renderCard(artistCard){
   moodSpan.addEventListener('mouseover', (e)=>{
       moodSpan.style.color = 'blue'
   })
+
+
+
+
   const websiteLink = document.createElement('a')
   websiteLink.innerHTML = `<a href= https://${artistCard.website}>link</a>`
   const artistImage = document.createElement('img')
@@ -117,7 +137,7 @@ function renderCard(artistCard){
   submit.id = "submit";
   submit.value = "Create Comment";
   artistReviewForm.append(contentInput, submit)
-  artistsCardDiv.append(nameSpan, artistImage, genreSpan, styleSpan, moodSpan, websiteLink,artistReviewForm)
+  artistsCardDiv.append(userSpan, nameSpan, artistImage, genreSpan, styleSpan, moodSpan, websiteLink,artistReviewForm)
 }
 function createBanner(artistCard){
     const artistBannerImg = document.createElement('img')
