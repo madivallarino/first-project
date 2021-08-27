@@ -10,6 +10,39 @@
       "banner": "https://www.theaudiodb.com/images/media/artist/banner/xwupxu1384878932.jpg",
       "username": "Zeon",
       "id": 1
+    },
+    {
+      "name": "Miley Cyrus",
+      "genre": "Country",
+      "style": "Rock/Pop",
+      "mood": "Confrontational",
+      "website": "www.mileycyrus.com",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/vussus1454419295.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
+      "username": "Maddy",
+      "id": 2
+    },
+    {
+      "name": "Miley Cyrus",
+      "genre": "Country",
+      "style": "Rock/Pop",
+      "mood": "Confrontational",
+      "website": "www.mileycyrus.com",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/vussus1454419295.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
+      "username": "Maddy",
+      "id": 3
+    },
+    {
+      "name": "Neil Diamond",
+      "genre": "Rock",
+      "style": "Rock/Pop",
+      "mood": "Gentle",
+      "website": "www.neildiamond.com",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/upxrrt1340914787.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/xwupxu1384878932.jpg",
+      "username": "Maddy",
+      "id": 4
     }
   ],
   "comments": [],

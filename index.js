@@ -57,18 +57,20 @@ function normalizeData(data, userInput){
          })  .then(resp => resp.json())
             .then(data=> (data))
             .catch(error=> console.log(error))
-}
-function updateArtistPage (){
-  fetch(baseUrl)
-  .then(resp=>resp.json())
-  .then(data=>  data.forEach(data2 =>renderPage(data2)))
-}
 
-function renderPage(artistCard){
-  console.log(artistCard)  
-  createBanner(artistCard)
-    renderCard(artistCard)
+            renderCard(artistCard)
 }
+// function updateArtistPage (){
+//   fetch(baseUrl)
+//   .then(resp=>resp.json())
+//   .then(data=>  data.forEach(data2 =>renderPage(data2)))
+// }
+/// need to delete
+// function renderPage(artistCard){
+//   console.log(artistCard)  
+//   createBanner(artistCard)
+//     renderCard(artistCard)
+// }
 function renderCard(artistCard){
   
   const artistDiv = document.createElement('div')
@@ -145,7 +147,7 @@ userSpan.addEventListener('mouseover', (e)=>{
   //appending 
   artistReviewForm.append(contentInput, submit)
   artistsCardDiv.append(userSpan, nameSpan, artistImage, genreSpan, styleSpan, moodSpan, websiteLink,artistReviewForm, deleteButton)
-  
+  createBanner(artistCard)
 }
 function createBanner(artistCard){
     const artistBannerImg = document.createElement('img')
@@ -163,7 +165,7 @@ function deleteCard(artistDiv, artistCard){
 .then(artistDiv.remove())
 }
 
-updateArtistPage()
+// updateArtistPage()
 
 
 
