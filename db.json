@@ -21,6 +21,28 @@
       "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
       "username": "maddy",
       "id": 2
+    },
+    {
+      "name": "Adele",
+      "genre": "Soul",
+      "style": "Rock/Pop",
+      "mood": "In Love",
+      "website": "www.adele.tv",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/qx55gi1616267150.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/ssqswr1347900886.jpg",
+      "username": "Zeon",
+      "id": 3
+    },
+    {
+      "name": "Neil Diamond",
+      "genre": "Rock",
+      "style": "Rock/Pop",
+      "mood": "Gentle",
+      "website": "www.neildiamond.com",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/upxrrt1340914787.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/xwupxu1384878932.jpg",
+      "username": "Zeon",
+      "id": 4
     }
   ],
   "comments": [

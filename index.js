@@ -63,9 +63,7 @@ function updateArtistPage (){
   .then(resp=>resp.json())
   .then(data=>  data.forEach(data2 =>renderPage(data2)))
 }
-function newFunction(data){
-    console.log(data[data.length-1])
-}
+
 function renderPage(artistCard){
   console.log(artistCard)  
   createBanner(artistCard)
