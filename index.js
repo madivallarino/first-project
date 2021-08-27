@@ -34,6 +34,7 @@ function fetchInformation(fixedWord){
    .then(data => normalizeData(data, userInput)) 
 }
 function normalizeData(data, userInput){
+  
   //  console.log(userInput)
         // console.log(data.artists)
         let artistCard = {
