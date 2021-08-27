@@ -84,7 +84,7 @@ function renderCard(artistCard){
 const userSpan = document.createElement('span')
 userSpan.textContent = artistCard.username
 userSpan.addEventListener('mouseover', (e)=>{
-  userSpan.style.color = 'turquoise'
+  userSpan.style.color = 'crimson'
 })
 
   const nameSpan = document.createElement('span')
@@ -95,7 +95,7 @@ userSpan.addEventListener('mouseover', (e)=>{
   const genreSpan = document.createElement('span')
   genreSpan.textContent =`Genre: ${artistCard.genre}`
   genreSpan.addEventListener('mouseover', (e)=>{
-    genreSpan.style.color = 'pink'
+    genreSpan.style.color = 'crimson'
 })
   const styleSpan = document.createElement('span')
   styleSpan.textContent = `Style: ${artistCard.style}`
@@ -105,7 +105,7 @@ userSpan.addEventListener('mouseover', (e)=>{
   const moodSpan = document.createElement('span')
   moodSpan.textContent = `Mood: ${artistCard.mood}`
   moodSpan.addEventListener('mouseover', (e)=>{
-      moodSpan.style.color = 'blue'
+      moodSpan.style.color = 'crimson'
   })
 
 

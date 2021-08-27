@@ -7,9 +7,10 @@
             display: inline-grid;
             margin: 1rem 2rem;  
           box-shadow: 3px 4px #e04b52; 
-          background-color: grey;   }
+          background-color: #E0FFFF;
+             }
 
-
+             
 img {
   height: 125px;
   width: 125px;
@@ -17,7 +18,12 @@ img {
   margin-right: auto;
 }
 
-
+span {
+  
+    border: 2.5px dotted red;
+  
+}
+}
 .comments {
   text-align: center;
   margin-left: auto;
