@@ -137,9 +137,15 @@ userSpan.addEventListener('mouseover', (e)=>{
   submit.id = "submit";
   submit.value = "Create Comment";
 
+ const deleteButton = document.createElement('button')
+ deleteButton.innerText = 'X'
+ deleteButton.addEventListener('click', () => deleteCard(artistDiv, artistCard))
+
+
   //appending 
   artistReviewForm.append(contentInput, submit)
-  artistsCardDiv.append(userSpan, nameSpan, artistImage, genreSpan, styleSpan, moodSpan, websiteLink,artistReviewForm)
+  artistsCardDiv.append(userSpan, nameSpan, artistImage, genreSpan, styleSpan, moodSpan, websiteLink,artistReviewForm, deleteButton)
+  
 }
 function createBanner(artistCard){
     const artistBannerImg = document.createElement('img')
@@ -147,5 +153,19 @@ function createBanner(artistCard){
     artistBannerImg.className = 'header'
     document.querySelector('h1#header').append(artistBannerImg)
 }
+
+
+function deleteCard(artistDiv, artistCard){
+  fetch(`${baseUrl}/${artistCard.id}`, {
+    method: 'DELETE',
+  })
+.then(resp => resp.json())
+.then(artistDiv.remove())
+}
+
 updateArtistPage()
+
+
+
+
 
