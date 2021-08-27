@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="style.css"/>
-        <script defer src="index.js"></script>
-        <title>My Website</title>
-    </head>
-    <body>
-        <form id="create-task-form" action="" method="POST">
-            <label for="new-zip-descrip">Enter New Zip Here:</label>
-            <input type="text" id="new-zip-input-box" name="zip-input-box" placeholder="new-zip">
-            <input type="submit" value="Submit Zip">
-    </body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<script defer src="index.js"></script>
+<body>
+    <div class="header">
+        <h1 id = 'header'>Music-Bop</h1>
+    </div>
+    <form class= 'artistForm'>
+        <label>User Name:</label>
+        <input type="text" name="User_name" />
+        <br/>
+        <br/>
+        <label>Artist Name:</label>
+        <input type="text" name="Artist_name" />
+        <br/>
+        <br/>
+        <input type="submit" value="Submit" />
+      </form>
+      <div id= 'extra-photo' class="background-photo">
+      </div>
+</body>
 </html>

@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "name": "Jay-Z",
+      "genre": "Hip-Hop",
+      "style": "Urban/R&B",
+      "mood": "Angry",
+      "website": "rocnation.com/jayz",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/sqsvpq1340392512.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/qypvyr1347449796.jpg",
+      "id": 1
+    },
+    {
+      "name": "Miley Cyrus",
+      "genre": "Country",
+      "style": "Rock/Pop",
+      "mood": "Confrontational",
+      "website": "www.mileycyrus.com",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/vussus1454419295.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
+      "id": 2
+    },
+    {
+      "name": "Miley Cyrus",
+      "genre": "Country",
+      "style": "Rock/Pop",
+      "mood": "Confrontational",
+      "website": "www.mileycyrus.com",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/vussus1454419295.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
