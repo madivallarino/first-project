@@ -90,7 +90,7 @@ userSpan.addEventListener('mouseover', (e)=>{
   const nameSpan = document.createElement('span')
   nameSpan.textContent = artistCard.name
   nameSpan.addEventListener('mouseover', (e)=>{
-    nameSpan.style.color = 'green'
+    nameSpan.style.color = 'purple'
 })
   const genreSpan = document.createElement('span')
   genreSpan.textContent =`Genre: ${artistCard.genre}`
@@ -99,8 +99,8 @@ userSpan.addEventListener('mouseover', (e)=>{
 })
   const styleSpan = document.createElement('span')
   styleSpan.textContent = `Style: ${artistCard.style}`
-  styleSpan.addEventListener('mouseover', (e)=>{
-      styleSpan.style.color = 'magenta'
+  styleSpan.addEventListener('mouseover', (e)=> {
+      styleSpan.style.color = 'purple'
   })
   const moodSpan = document.createElement('span')
   moodSpan.textContent = `Mood: ${artistCard.mood}`
@@ -110,12 +110,14 @@ userSpan.addEventListener('mouseover', (e)=>{
 
 
 
-
+//adding webstie link & image
   const websiteLink = document.createElement('a')
   websiteLink.innerHTML = `<a href= https://${artistCard.website}>link</a>`
   const artistImage = document.createElement('img')
   artistImage.src = artistCard.image
   artistDiv.append(artistsCardDiv)
+
+//comment section
   const artistReviewForm = document.createElement("form");
   artistReviewForm.id = "review-form";
   artistReviewForm.addEventListener("submit", (e)=>{
@@ -134,6 +136,8 @@ userSpan.addEventListener('mouseover', (e)=>{
   submit.type = "submit";
   submit.id = "submit";
   submit.value = "Create Comment";
+
+  //appending 
   artistReviewForm.append(contentInput, submit)
   artistsCardDiv.append(userSpan, nameSpan, artistImage, genreSpan, styleSpan, moodSpan, websiteLink,artistReviewForm)
 }
