@@ -1,5 +1,28 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "name": "Adele",
+      "genre": "Soul",
+      "style": "Rock/Pop",
+      "mood": "In Love",
+      "website": "www.adele.tv",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/qx55gi1616267150.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/ssqswr1347900886.jpg",
+      "username": "Maddy",
+      "id": 2
+    },
+    {
+      "name": "Miley Cyrus",
+      "genre": "Country",
+      "style": "Rock/Pop",
+      "mood": "Confrontational",
+      "website": "www.mileycyrus.com",
+      "image": "https://www.theaudiodb.com/images/media/artist/thumb/vussus1454419295.jpg",
+      "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
+      "username": "maddy",
+      "id": 3
+    }
+  ],
   "comments": [],
   "profile": {
     "name": "typicode"

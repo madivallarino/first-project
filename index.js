@@ -1,20 +1,12 @@
-// console.log('anything')
 
 const baseUrl = 'http://localhost:3000/posts'
 const artistSubmitForm = document.querySelector(".artistForm")
 artistSubmitForm.addEventListener('submit',(e)=> {
     e.preventDefault()
-    // console.log('anything')
     let artistInput = document.querySelector("body > form > input[type=text]:nth-child(6)").value
-    // let userInput = document.querySelector("body > form > input[type=text]:nth-child(2)").value
-    // renderUserName(userInput)
     fixArtistInput(artistInput)
     artistSubmitForm.reset()
 })
-// function renderUserName(userInput){
-//   normalizeData(userInput)
-  
-// }
 function fixArtistInput(word) {
     let fixedWord = "";
     let artistInput = word
@@ -34,9 +26,6 @@ function fetchInformation(fixedWord){
    .then(data => normalizeData(data, userInput)) 
 }
 function normalizeData(data, userInput){
-  
-  //  console.log(userInput)
-        // console.log(data.artists)
         let artistCard = {
             name: data.artists[0].strArtist,
             genre: data.artists[0].strGenre,
@@ -60,12 +49,6 @@ function normalizeData(data, userInput){
 
             renderCard(artistCard)
 }
-function updateArtistPage (){
-  fetch(baseUrl)
-  .then(resp=>resp.json())
-  .then(data=>  data.forEach(data2 =>renderCard(data2)))
-}
-
 function renderCard(artistCard){
 //makes the banner
 const artistBannerImg = document.createElement('img')
@@ -123,11 +106,11 @@ userSpan.addEventListener('mouseover', (e)=>{
   artistReviewForm.id = "review-form";
   artistReviewForm.addEventListener("submit", (e)=>{
       e.preventDefault();
-      const newSpanForText = document.createElement('span')
+      const newSpanForText = document.createElement('li')
       newSpanForText.textContent = e.target.querySelector("#content-input").value 
       newSpanForText.id = "review-text"
       newSpanForText.className = 'comments'
-      artistReviewForm.append(newSpanForText)
+      document.querySelector('#user-comments').append(newSpanForText)
     artistReviewForm.reset()
   });
 
@@ -160,9 +143,26 @@ function deleteCard(artistDiv, artistBannerImg, artistCard){
 .then(artistBannerImg.remove())
 }
 
+function updateArtistPage (){
+  fetch(baseUrl)
+  .then(resp=>resp.json())
+  .then(data=>  data.forEach(data2 =>renderCard(data2)))
+}
+
 updateArtistPage()
 
 
-
+// function postComments(){
+ 
+//   fetch(`${baseUrl}/${artistCard.id}`, {
+//     method: 'POST',{
+//       'Content-Type': 'application/json'
+//     }
+//     body: JSON.stringify()
+//   })
+// .then(resp => resp.json())
+// .then(artistDiv.remove())
+// .then(artistBannerImg.remove())
+// }
 
 

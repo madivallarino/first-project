@@ -53,6 +53,7 @@ h1 {
   text-align: center;
   border: 4.0px dotted black;
   color: purple;
+  background-color: #E0FFFF;
 }
 
 h2{ 
@@ -60,9 +61,26 @@ h2{
   font-size: 24px;
   text-align: center;
   border: 4.0px dotted black;
-  color: purple; 
+  color: purple;
+  background-color: #E0FFFF; 
 }
 body {
 background-image: url('backgroundimage.png');
 
+}
+
+.comment-section 
+{
+  text-align: right;
+  width: 150px;
+  position: absolute;
+  right: 200px;
+  background-color: #E0FFFF;
+  
+}
+
+form {
+  background-color: #E0FFFF;
+  border: 2.5px dotted black;
+  width: 300px;
 }
