@@ -1,4 +1,5 @@
 // console.log('anything')
+
 const baseUrl = 'http://localhost:3000/posts'
 const artistSubmitForm = document.querySelector(".artistForm")
 artistSubmitForm.addEventListener('submit',(e)=> {
@@ -11,7 +12,8 @@ artistSubmitForm.addEventListener('submit',(e)=> {
     artistSubmitForm.reset()
 })
 // function renderUserName(userInput){
-    
+//   normalizeData(userInput)
+  
 // }
 function fixArtistInput(word) {
     let fixedWord = "";
@@ -26,11 +28,13 @@ function fixArtistInput(word) {
       fetchInformation(fixedWord)
 }
 function fetchInformation(fixedWord){
+  let userInput = document.querySelector("body > form > input[type=text]:nth-child(2)").value
     fetch(`https://www.theaudiodb.com/api/v1/json/1/search.php?s=${fixedWord}`)
    .then(resp => resp.json())
-   .then(data => normalizeData(data)) 
+   .then(data => normalizeData(data, userInput)) 
 }
-function normalizeData(data){
+function normalizeData(data, userInput){
+  //  console.log(userInput)
         // console.log(data.artists)
         let artistCard = {
             name: data.artists[0].strArtist,
@@ -39,7 +43,9 @@ function normalizeData(data){
             mood: data.artists[0].strMood,
             website: data.artists[0].strWebsite,
             image: data.artists[0].strArtistThumb,
-            banner: data.artists[0].strArtistBanner
+            banner: data.artists[0].strArtistBanner,
+            username: userInput
+          
         }
         fetch(baseUrl, {
             method: 'POST',
