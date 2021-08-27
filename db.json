@@ -8,7 +8,7 @@
       "website": "www.adele.tv",
       "image": "https://www.theaudiodb.com/images/media/artist/thumb/qx55gi1616267150.jpg",
       "banner": "https://www.theaudiodb.com/images/media/artist/banner/ssqswr1347900886.jpg",
-      "username": "Maddy",
+      "username": "Zeon",
       "id": 2
     },
     {
@@ -19,11 +19,28 @@
       "website": "www.mileycyrus.com",
       "image": "https://www.theaudiodb.com/images/media/artist/thumb/vussus1454419295.jpg",
       "banner": "https://www.theaudiodb.com/images/media/artist/banner/wursyu1454277800.jpg",
-      "username": "maddy",
+      "username": "Zeon",
       "id": 3
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "comments": "NICE WORK",
+      "id": 1
+    },
+    {
+      "comments": "NICE WORK",
+      "id": 2
+    },
+    {
+      "comments": "NICE WORK",
+      "id": 3
+    },
+    {
+      "comments": "YAAAAY",
+      "id": 4
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

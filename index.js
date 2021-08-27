@@ -1,5 +1,7 @@
 
-const baseUrl = 'http://localhost:3000/posts'
+const postUrl = 'http://localhost:3000/posts'
+const commentUrl = 'http://localhost:3000/comments'
+
 const artistSubmitForm = document.querySelector(".artistForm")
 artistSubmitForm.addEventListener('submit',(e)=> {
     e.preventDefault()
@@ -37,7 +39,7 @@ function normalizeData(data, userInput){
             username: userInput
           
         }
-        fetch(baseUrl, {
+        fetch(postUrl, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -104,15 +106,11 @@ userSpan.addEventListener('mouseover', (e)=>{
 //comment section
   const artistReviewForm = document.createElement("form");
   artistReviewForm.id = "review-form";
-  artistReviewForm.addEventListener("submit", (e)=>{
-      e.preventDefault();
-      const newSpanForText = document.createElement('li')
-      newSpanForText.textContent = e.target.querySelector("#content-input").value 
-      newSpanForText.id = "review-text"
-      newSpanForText.className = 'comments'
-      document.querySelector('#user-comments').append(newSpanForText)
+  artistReviewForm.addEventListener("submit", (e) =>{
+    e.preventDefault()
+    renderComments(e)
     artistReviewForm.reset()
-  });
+  })
 
   const contentInput = document.createElement("input");
   contentInput.type = "text";
@@ -135,7 +133,7 @@ userSpan.addEventListener('mouseover', (e)=>{
 }
 
 function deleteCard(artistDiv, artistBannerImg, artistCard){
-  fetch(`${baseUrl}/${artistCard.id}`, {
+  fetch(`${postUrl}/${artistCard.id}`, {
     method: 'DELETE',
   })
 .then(resp => resp.json())
@@ -143,26 +141,44 @@ function deleteCard(artistDiv, artistBannerImg, artistCard){
 .then(artistBannerImg.remove())
 }
 
-function updateArtistPage (){
-  fetch(baseUrl)
+function updateMusicPage (){
+  fetch(postUrl)
   .then(resp=>resp.json())
   .then(data=>  data.forEach(data2 =>renderCard(data2)))
+
+  // fetch(commentUrl)
+  // .then(resp => resp.json())
+  // .then(data => ))
 }
 
-updateArtistPage()
+function renderComments(e){
+  const newSpanForText = document.createElement('li')
+  newSpanForText.textContent = e.target.querySelector("#content-input").value 
+  newSpanForText.id = "review-text"
+  newSpanForText.className = 'comments'
+  document.querySelector('#user-comments').append(newSpanForText)
+}
 
 
-// function postComments(){
- 
-//   fetch(`${baseUrl}/${artistCard.id}`, {
-//     method: 'POST',{
-//       'Content-Type': 'application/json'
-//     }
-//     body: JSON.stringify()
-//   })
-// .then(resp => resp.json())
-// .then(artistDiv.remove())
-// .then(artistBannerImg.remove())
-// }
+updateMusicPage()
+
+
+
+function postComments(e){
+  
+ const userComment =  {comments : e.target.querySelector("#content-input").value }
+
+  fetch(commentUrl, {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userComment),
+  })
+.then(resp => resp.json())
+.then(data=> renderComments(data))
+
+// renderComments()
+}
 
 
